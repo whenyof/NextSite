@@ -255,13 +255,20 @@ class ContratarFormulario {
     }
     
     async sendProjectInfo(formData, plan, price, name) {
-        // Usar la misma configuración que el formulario de contacto
+        // Usar la configuración desde config.js
         try {
             console.log('=== ENVIANDO EMAIL DE CONTRATACIÓN ===');
             
             if (typeof emailjs === 'undefined') {
                 throw new Error('EmailJS no está cargado');
             }
+            
+            // Obtener configuración desde config.js
+            const emailjsConfig = window.NextSiteConfig?.emailjs || {
+                publicKey: "Gi9mcTal5Dla_Worb",
+                serviceId: "service_cxiow2d",
+                templateId: "template_f7i9j0p"
+            };
             
             // Parámetros usando la misma estructura que el formulario de contacto
             const templateParams = {
@@ -278,12 +285,12 @@ class ContratarFormulario {
             
             console.log('Enviando email de contratación...');
             
-            // Usar la misma configuración que el formulario de contacto
-            await emailjs.init("Gi9mcTal5Dla_Worb");
+            // Usar la configuración desde config.js
+            await emailjs.init(emailjsConfig.publicKey);
             
             const result = await emailjs.send(
-                "service_cxiow2d",
-                "template_f7i9j0p",
+                emailjsConfig.serviceId,
+                emailjsConfig.templateId,
                 templateParams
             );
             
