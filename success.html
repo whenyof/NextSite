@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Completado - NextSite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a74da 0%, #0056b3 100%);
+            padding: 20px;
+        }
+        
+        .success-container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: pulse 2s infinite;
+        }
+        
+        .success-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .success-message {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .success-details {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .success-details h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .success-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .success-btn {
+            background: linear-gradient(135deg, #0a74da, #0056b3);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .success-btn:hover {
+            background: linear-gradient(135deg, #0056b3, #003d82);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(10, 116, 218, 0.3);
+        }
+        
+        .success-btn.secondary {
+            background: #6c757d;
+        }
+        
+        .success-btn.secondary:hover {
+            background: #5a6268;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 40px 20px;
+            }
+            
+            .success-title {
+                font-size: 2rem;
+            }
+            
+            .success-actions {
+                flex-direction: column;
+            }
+            
+            .success-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-page">
+        <div class="success-container">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <h1 class="success-title">¡Pago Completado!</h1>
+            <p class="success-message">
+                Gracias por tu compra. Hemos recibido tu pago y pronto nos pondremos en contacto contigo para comenzar con tu proyecto.
+            </p>
+            
+            <div class="success-details">
+                <h3><i class="fas fa-receipt"></i> Detalles de la Compra</h3>
+                <div class="detail-row">
+                    <span>ID de Transacción:</span>
+                    <span id="transactionId">-</span>
+                </div>
+                <div class="detail-row">
+                    <span>Fecha:</span>
+                    <span id="transactionDate">-</span>
+                </div>
+                <div class="detail-row">
+                    <span>Método de Pago:</span>
+                    <span id="paymentMethod">-</span>
+                </div>
+                <div class="detail-row">
+                    <span>Total:</span>
+                    <span id="transactionTotal">-</span>
+                </div>
+            </div>
+            
+            <div style="background: #e7f3ff; padding: 20px; border-radius: 10px; margin-bottom: 30px; border-left: 4px solid #0a74da;">
+                <h4 style="color: #0a74da; margin-bottom: 10px;"><i class="fas fa-info-circle"></i> Próximos Pasos</h4>
+                <ul style="text-align: left; color: #666; line-height: 1.8;">
+                    <li>Recibirás un email de confirmación en los próximos minutos</li>
+                    <li>Nuestro equipo se pondrá en contacto contigo en 24-48 horas</li>
+                    <li>Comenzaremos el desarrollo de tu sitio web</li>
+                    <li>Te mantendremos informado del progreso</li>
+                </ul>
+            </div>
+            
+            <div class="success-actions">
+                <a href="/" class="success-btn">
+                    <i class="fas fa-home"></i>
+                    Volver al Inicio
+                </a>
+                <a href="mailto:info@nextsite.es" class="success-btn secondary">
+                    <i class="fas fa-envelope"></i>
+                    Contactar Soporte
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Extract parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        
+        // Update transaction details
+        document.getElementById('transactionId').textContent = sessionId || 'N/A';
+        document.getElementById('transactionDate').textContent = new Date().toLocaleDateString('es-ES');
+        document.getElementById('paymentMethod').textContent = 'Stripe';
+        
+        // Get total from localStorage or default
+        const cartTotal = localStorage.getItem('last_cart_total');
+        document.getElementById('transactionTotal').textContent = cartTotal || '€0.00';
+        
+        // Clear cart after successful payment
+        localStorage.removeItem('nextsite_cart');
+        
+        // Send analytics event
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'purchase', {
+                transaction_id: sessionId,
+                value: parseFloat(cartTotal?.replace('€', '') || '0'),
+                currency: 'EUR'
+            });
+        }
+    </script>
+</body>
+</html>

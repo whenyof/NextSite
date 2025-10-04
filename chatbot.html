@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot NextSite</title>
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <!-- Chat Button -->
+        <button id="chatbot-toggle" class="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="notification-dot" id="notification-dot"></span>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chatbot-window" class="chatbot-window">
+            <!-- Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-brand">
+                    <div class="chatbot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chatbot-info">
+                        <h3>Asistente NextSite</h3>
+                        <span class="status">En línea</span>
+                    </div>
+                </div>
+                <button id="chatbot-minimize" class="chatbot-minimize">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="chatbot-messages" class="chatbot-messages">
+                <!-- Welcome Message -->
+                <div class="message bot-message welcome-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>¡Hola! 👋 Soy tu asistente de NextSite. ¿En qué puedo ayudarte hoy?</p>
+                        </div>
+                        <div class="message-time">Ahora</div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="quick-action-btn" data-message="¿Cuáles son vuestros servicios?">
+                        <i class="fas fa-cogs"></i>
+                        Servicios
+                    </button>
+                    <button class="quick-action-btn" data-message="¿Cómo funciona el proceso de desarrollo?">
+                        <i class="fas fa-code"></i>
+                        Proceso
+                    </button>
+                    <button class="quick-action-btn" data-message="¿Cuánto cuesta un sitio web?">
+                        <i class="fas fa-euro-sign"></i>
+                        Precios
+                    </button>
+                    <button class="quick-action-btn" data-message="¿Cuánto tiempo se tarda en desarrollar un sitio web?">
+                        <i class="fas fa-clock"></i>
+                        Tiempos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chatbot-input-area">
+                <div class="typing-indicator" id="typing-indicator">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="typing-text">Asistente está escribiendo...</span>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje..." maxlength="500">
+                    <button id="chatbot-send" class="chatbot-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

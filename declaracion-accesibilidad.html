@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Declaración de Accesibilidad de NextSite - Compromiso con la accesibilidad web para todos los usuarios">
+    <meta name="robots" content="index, follow">
+    <title>Declaración de Accesibilidad - NextSite</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="nextsitesolo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="nextsitesolo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="nextsitesolo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="nextsitesolo.png">
+    <link rel="shortcut icon" href="nextsitesolo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .legal-page {
+            padding: 120px 0 80px;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .legal-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .legal-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .legal-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .legal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+        
+        .legal-content h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .legal-content h3 {
+            color: #34495e;
+            font-size: 1.2rem;
+            margin: 25px 0 10px 0;
+        }
+        
+        .legal-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .legal-content ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        .legal-content li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        
+        .last-updated {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+            margin-bottom: 30px;
+        }
+        
+        .accessibility-level {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        
+        .level-aa {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        
+        .highlight-box {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .feature-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .compliance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .compliance-table th,
+        .compliance-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .compliance-table th {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .compliance-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status.compliant {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        
+        .status.partial {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+        
+        @media (max-width: 768px) {
+            .legal-page {
+                padding: 100px 0 60px;
+            }
+            
+            .legal-content {
+                padding: 25px;
+            }
+            
+            .legal-header h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="legal-page">
+        <div class="legal-container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Volver al inicio
+            </a>
+            
+            <div class="legal-header">
+                <h1>Declaración de Accesibilidad</h1>
+                <p>Compromiso con la accesibilidad web universal</p>
+            </div>
+            
+            <div class="last-updated">
+                <strong>Última actualización:</strong> 19 de diciembre de 2024
+            </div>
+            
+            <div class="legal-content">
+                <div class="highlight-box">
+                    <h3><i class="fas fa-universal-access"></i> Nuestro Compromiso</h3>
+                    <p>NextSite se compromete a garantizar la accesibilidad digital para todas las personas, independientemente de sus capacidades o limitaciones. Creemos que la tecnología web debe ser inclusiva y estar disponible para todos.</p>
+                    <div class="accessibility-level level-aa">
+                        <i class="fas fa-check-circle"></i>
+                        Nivel de Conformidad: AA (WCAG 2.1)
+                    </div>
+                </div>
+
+                <h2>1. Estándares de Accesibilidad</h2>
+                <p>Este sitio web cumple con los siguientes estándares internacionales de accesibilidad:</p>
+                <ul>
+                    <li><strong>WCAG 2.1 (Web Content Accessibility Guidelines):</strong> Nivel AA</li>
+                    <li><strong>EN 301 549:</strong> Estándar europeo de accesibilidad</li>
+                    <li><strong>Ley 51/2003:</strong> Ley española de igualdad de oportunidades</li>
+                    <li><strong>Real Decreto 1112/2018:</strong> Accesibilidad de sitios web y aplicaciones móviles</li>
+                </ul>
+
+                <h2>2. Características de Accesibilidad Implementadas</h2>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4><i class="fas fa-keyboard"></i> Navegación por Teclado</h4>
+                        <p>Todas las funciones del sitio son accesibles mediante navegación por teclado. Use Tab para navegar y Enter para activar enlaces y botones.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-eye"></i> Lectores de Pantalla</h4>
+                        <p>Compatibilidad completa con lectores de pantalla como NVDA, JAWS y VoiceOver. Estructura semántica HTML5.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-text-height"></i> Texto Escalable</h4>
+                        <p>El texto puede ampliarse hasta 200% sin pérdida de funcionalidad. Soporte para zoom del navegador.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-palette"></i> Contraste de Colores</h4>
+                        <p>Relación de contraste mínimo de 4.5:1 para texto normal y 3:1 para texto grande según WCAG 2.1.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-images"></i> Imágenes Accesibles</h4>
+                        <p>Todas las imágenes incluyen texto alternativo descriptivo (alt text) para usuarios con discapacidad visual.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h4><i class="fas fa-mobile-alt"></i> Diseño Responsivo</h4>
+                        <p>Adaptación automática a diferentes tamaños de pantalla y dispositivos móviles.</p>
+                    </div>
+                </div>
+
+                <h2>3. Estado de Conformidad</h2>
+                <p>Este sitio web cumple parcialmente con los criterios de accesibilidad WCAG 2.1 nivel AA:</p>
+
+                <table class="compliance-table">
+                    <thead>
+                        <tr>
+                            <th>Criterio</th>
+                            <th>Estado</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.1.1 Contenido no textual</td>
+                            <td><span class="status compliant">Cumple</span></td>
+                            <td>Imágenes con texto alternativo</td>
+                        </tr>
+                        <tr>
+                            <td>1.3.1 Información y relaciones</td>
+                            <td><span class="status compliant">Cumple</span></td>
+                            <td>Estructura semántica correcta</td>
+                        </tr>
+                        <tr>
+                            <td>1.4.3 Contraste (mínimo)</td>
+                            <td><span class="status compliant">Cumple</span></td>
+                            <td>Contraste 4.5:1 o superior</td>
+                        </tr>
+                        <tr>
+                            <td>2.1.1 Teclado</td>
+                            <td><span class="status compliant">Cumple</span></td>
+                            <td>Navegación completa por teclado</td>
+                        </tr>
+                        <tr>
+                            <td>2.4.1 Evitar bloques</td>
+                            <td><span class="status compliant">Cumple</span></td>
+                            <td>Enlaces de salto al contenido</td>
+                        </tr>
+                        <tr>
+                            <td>2.4.3 Orden de enfoque</td>
+                            <td><span class="status compliant">Cumple</span></td>
+                            <td>Orden lógico de navegación</td>
+                        </tr>
+                        <tr>
+                            <td>3.1.1 Idioma de la página</td>
+                            <td><span class="status compliant">Cumple</span></td>
+                            <td>Atributo lang especificado</td>
+                        </tr>
+                        <tr>
+                            <td>4.1.2 Nombre, función, valor</td>
+                            <td><span class="status compliant">Cumple</span></td>
+                            <td>Elementos de interfaz accesibles</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>4. Tecnologías de Asistencia Compatibles</h2>
+                <p>Este sitio web es compatible con las siguientes tecnologías de asistencia:</p>
+
+                <h3>4.1. Lectores de Pantalla</h3>
+                <ul>
+                    <li><strong>NVDA (NonVisual Desktop Access):</strong> Gratuito para Windows</li>
+                    <li><strong>JAWS (Job Access With Speech):</strong> Comercial para Windows</li>
+                    <li><strong>VoiceOver:</strong> Integrado en macOS e iOS</li>
+                    <li><strong>TalkBack:</strong> Integrado en Android</li>
+                </ul>
+
+                <h3>4.2. Software de Ampliación</h3>
+                <ul>
+                    <li><strong>ZoomText:</strong> Ampliador de pantalla comercial</li>
+                    <li><strong>MAGic:</strong> Ampliador de pantalla comercial</li>
+                    <li><strong>Lupa de Windows:</strong> Herramienta integrada de Windows</li>
+                </ul>
+
+                <h3>4.3. Software de Reconocimiento de Voz</h3>
+                <ul>
+                    <li><strong>Dragon NaturallySpeaking:</strong> Control por voz</li>
+                    <li><strong>Voice Control (macOS):</strong> Control por voz integrado</li>
+                    <li><strong>Dictado de Windows:</strong> Herramienta integrada</li>
+                </ul>
+
+                <h2>5. Limitaciones y Excepciones</h2>
+                <p>Aunque nos esforzamos por mantener la máxima accesibilidad, reconocemos las siguientes limitaciones:</p>
+
+                <h3>5.1. Contenido de Terceros</h3>
+                <ul>
+                    <li>Google Maps embebido puede no ser completamente accesible</li>
+                    <li>Algunos servicios de análisis pueden no cumplir estándares AA</li>
+                    <li>Contenido generado por usuarios puede no seguir nuestras pautas</li>
+                </ul>
+
+                <h3>5.2. Contenido Dinámico</h3>
+                <ul>
+                    <li>Animaciones CSS pueden no ser compatibles con preferencias de movimiento reducido</li>
+                    <li>Contenido cargado dinámicamente puede requerir revisión adicional</li>
+                </ul>
+
+                <h2>6. Mejoras Futuras</h2>
+                <p>Estamos trabajando continuamente para mejorar la accesibilidad de nuestro sitio web:</p>
+                <ul>
+                    <li>Implementación de más opciones de personalización</li>
+                    <li>Mejora del soporte para navegación por voz</li>
+                    <li>Optimización para dispositivos de entrada alternativos</li>
+                    <li>Pruebas regulares con usuarios reales</li>
+                </ul>
+
+                <h2>7. Contacto y Retroalimentación</h2>
+                <p>Valoramos sus comentarios sobre la accesibilidad de nuestro sitio web. Si encuentra barreras de accesibilidad o tiene sugerencias de mejora:</p>
+
+                <h3>7.1. Formas de Contacto</h3>
+                <ul>
+                    <li><strong>Email:</strong> info@nextsite.es</li>
+                    <li><strong>Asunto:</strong> "Accesibilidad Web"</li>
+                    <li><strong>Formulario de contacto:</strong> Disponible en la página principal</li>
+                </ul>
+
+                <h3>7.2. Información a Incluir</h3>
+                <p>Al reportar problemas de accesibilidad, por favor incluya:</p>
+                <ul>
+                    <li>URL específica donde encontró el problema</li>
+                    <li>Descripción detallada del problema</li>
+                    <li>Tecnología de asistencia que está utilizando</li>
+                    <li>Sistema operativo y navegador</li>
+                </ul>
+
+                <h2>8. Proceso de Resolución</h2>
+                <p>Nos comprometemos a responder a todas las consultas de accesibilidad dentro de 5 días hábiles y a implementar soluciones en un plazo razonable.</p>
+
+                <h2>9. Recursos de Accesibilidad</h2>
+                <p>Para obtener más información sobre accesibilidad web:</p>
+                <ul>
+                    <li><a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank">Guía Rápida WCAG 2.1</a></li>
+                    <li><a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank">Introducción a la Accesibilidad Web</a></li>
+                    <li><a href="https://www.aenor.com/normas-y-libros/buscador-de-normas/UNE?c=UNE-EN%20301549" target="_blank">UNE-EN 301549</a></li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h3><i class="fas fa-heart"></i> Nuestro Compromiso Continuo</h3>
+                    <p>La accesibilidad web es un proceso continuo, no un destino final. Nos comprometemos a mantener y mejorar constantemente la accesibilidad de nuestro sitio web para garantizar que todos los usuarios puedan acceder a nuestros servicios de manera equitativa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

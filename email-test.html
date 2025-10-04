@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Email - NextSite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .test-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .test-form input, .test-form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-form button {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .test-form button:hover {
+            background: #2980b9;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Prueba de Sistema de Emails</h1>
+        <p>Usa este formulario para probar el envío de emails de confirmación.</p>
+        
+        <form class="test-form" id="testForm">
+            <input type="text" id="testName" placeholder="Nombre completo" required>
+            <input type="email" id="testEmail" placeholder="Email de prueba" required>
+            <input type="text" id="testPlan" placeholder="Plan seleccionado" required>
+            <textarea id="testProject" placeholder="Descripción del proyecto" required></textarea>
+            <input type="text" id="testDelivery" placeholder="Plazo deseado" required>
+            
+            <button type="submit">Enviar Email de Prueba</button>
+        </form>
+        
+        <div id="status"></div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script>
+        document.getElementById('testForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const statusDiv = document.getElementById('status');
+            const submitBtn = e.target.querySelector('button');
+            
+            // Obtener datos del formulario
+            const data = {
+                nombre: document.getElementById('testName').value,
+                email: document.getElementById('testEmail').value,
+                plan: document.getElementById('testPlan').value,
+                proyecto: document.getElementById('testProject').value,
+                plazo: document.getElementById('testDelivery').value
+            };
+            
+            // Mostrar estado de carga
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            statusDiv.innerHTML = '<div class="status">Enviando emails...</div>';
+            
+            try {
+                // Verificar que EmailJS esté cargado
+                if (typeof emailjs === 'undefined') {
+                    throw new Error('EmailJS no está cargado');
+                }
+                
+                // Preparar parámetros para el email a NextSite
+                const templateParams = {
+                    from_name: data.nombre,
+                    from_company: 'Empresa de Prueba',
+                    from_email: data.email,
+                    from_phone: 'No especificado',
+                    plan_interes: data.plan,
+                    project_description: data.proyecto,
+                    delivery_time: data.plazo,
+                    message: data.plan + ' - ' + data.proyecto,
+                    date: new Date().toLocaleString('es-ES')
+                };
+                
+                // Preparar parámetros para el email de confirmación al cliente (optimizado anti-spam)
+                const confirmationParams = {
+                    to_name: data.nombre,
+                    to_email: data.email,
+                    plan_selected: data.plan,
+                    project_description: data.proyecto,
+                    delivery_time: data.plazo,
+                    current_date: new Date().toLocaleDateString('es-ES', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    }),
+                    current_time: new Date().toLocaleTimeString('es-ES', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    }),
+                    // Variables adicionales para personalización anti-spam
+                    company_name: 'NextSite',
+                    contact_email: 'info@nextsite.es',
+                    website_url: 'https://nextsite.es',
+                    support_message: 'Si tiene alguna pregunta, no dude en contactarnos.'
+                };
+                
+                console.log('🚀 Iniciando envío de emails...');
+                
+                // Inicializar EmailJS
+                await emailjs.init("Gi9mcTal5Dla_Worb");
+                
+                // Enviar email a NextSite (email original)
+                const result1 = await emailjs.send(
+                    "service_cxiow2d",
+                    "template_f7i9j0p", // Template original para NextSite
+                    templateParams
+                );
+                
+                console.log('✅ Email a NextSite enviado:', result1);
+                
+                // Enviar email de confirmación al cliente
+                const result2 = await emailjs.send(
+                    "service_cxiow2d",
+                    "template_bke6cwj", // Template de confirmación configurado
+                    confirmationParams
+                );
+                
+                console.log('✅ Email de confirmación enviado:', result2);
+                
+                // Mostrar éxito
+                statusDiv.innerHTML = `
+                    <div class="status success">
+                        ✅ ¡Emails enviados correctamente!<br>
+                        📧 Email a NextSite: ${result1.status} ${result1.text}<br>
+                        📧 Email de confirmación: ${result2.status} ${result2.text}<br>
+                        <small>Revisa la consola para más detalles.</small>
+                    </div>
+                `;
+                
+                // Limpiar formulario
+                document.getElementById('testForm').reset();
+                
+            } catch (error) {
+                console.error('❌ Error al enviar emails:', error);
+                
+                statusDiv.innerHTML = `
+                    <div class="status error">
+                        ❌ Error al enviar emails:<br>
+                        ${error.message}<br>
+                        <small>Revisa la consola para más detalles.</small>
+                    </div>
+                `;
+            } finally {
+                // Restaurar botón
+                submitBtn.textContent = 'Enviar Email de Prueba';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
