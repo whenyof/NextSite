@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integración del Chatbot - NextSite</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0a74da;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #0a74da;
+        }
+        .step h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffeaa7;
+            margin: 15px 0;
+        }
+        .file-list {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .file-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .btn {
+            background: #0a74da;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Integración del Chatbot NextSite</h1>
+        
+        <div class="highlight">
+            <strong>¡Perfecto!</strong> He creado un chatbot profesional y minimalista para tu web. Aquí tienes todo lo que necesitas para integrarlo.
+        </div>
+
+        <div class="file-list">
+            <h3>📁 Archivos Creados:</h3>
+            <ul>
+                <li><code>chatbot.html</code> - Página de demostración completa</li>
+                <li><code>chatbot.css</code> - Estilos del chatbot</li>
+                <li><code>chatbot.js</code> - Lógica del chatbot con IA</li>
+                <li><code>chatbot-integration.html</code> - Esta guía de integración</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>1️⃣ Integración Básica</h3>
+            <p>Para añadir el chatbot a tu web existente, simplemente añade estos archivos a tu servidor y agrega este código antes del cierre de <code>&lt;/body&gt;</code> en tu <code>index.html</code>:</p>
+            
+            <pre><code>&lt;!-- Chatbot NextSite --&gt;
+&lt;link rel="stylesheet" href="chatbot.css"&gt;
+&lt;script src="chatbot.js"&gt;&lt;/script&gt;</code></pre>
+
+            <p>Y añade este HTML antes del cierre de <code>&lt;/body&gt;</code>:</p>
+            
+            <pre><code>&lt;!-- Chatbot Widget --&gt;
+&lt;div id="chatbot-widget" class="chatbot-widget"&gt;
+    &lt;button id="chatbot-toggle" class="chatbot-toggle"&gt;
+        &lt;i class="fas fa-comments"&gt;&lt;/i&gt;
+        &lt;span class="notification-dot" id="notification-dot"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;div id="chatbot-window" class="chatbot-window"&gt;
+        &lt;div class="chatbot-header"&gt;
+            &lt;div class="chatbot-brand"&gt;
+                &lt;div class="chatbot-avatar"&gt;
+                    &lt;i class="fas fa-robot"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;div class="chatbot-info"&gt;
+                    &lt;h3&gt;Asistente NextSite&lt;/h3&gt;
+                    &lt;span class="status"&gt;En línea&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;button id="chatbot-minimize" class="chatbot-minimize"&gt;
+                &lt;i class="fas fa-minus"&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div id="chatbot-messages" class="chatbot-messages"&gt;
+            &lt;div class="message bot-message welcome-message"&gt;
+                &lt;div class="message-avatar"&gt;
+                    &lt;i class="fas fa-robot"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;div class="message-content"&gt;
+                    &lt;div class="message-bubble"&gt;
+                        &lt;p&gt;¡Hola! 👋 Soy tu asistente de NextSite. ¿En qué puedo ayudarte hoy?&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class="message-time"&gt;Ahora&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="quick-actions"&gt;
+                &lt;button class="quick-action-btn" data-message="¿Cuáles son vuestros servicios?"&gt;
+                    &lt;i class="fas fa-cogs"&gt;&lt;/i&gt;
+                    Servicios
+                &lt;/button&gt;
+                &lt;button class="quick-action-btn" data-message="¿Cómo funciona el proceso de desarrollo?"&gt;
+                    &lt;i class="fas fa-code"&gt;&lt;/i&gt;
+                    Proceso
+                &lt;/button&gt;
+                &lt;button class="quick-action-btn" data-message="¿Cuánto cuesta un sitio web?"&gt;
+                    &lt;i class="fas fa-euro-sign"&gt;&lt;/i&gt;
+                    Precios
+                &lt;/button&gt;
+                &lt;button class="quick-action-btn" data-message="¿Cuánto tiempo se tarda en desarrollar un sitio web?"&gt;
+                    &lt;i class="fas fa-clock"&gt;&lt;/i&gt;
+                    Tiempos
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="chatbot-input-area"&gt;
+            &lt;div class="typing-indicator" id="typing-indicator"&gt;
+                &lt;div class="typing-dots"&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                    &lt;span&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;span class="typing-text"&gt;Asistente está escribiendo...&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="input-container"&gt;
+                &lt;input type="text" id="chatbot-input" placeholder="Escribe tu mensaje..." maxlength="500"&gt;
+                &lt;button id="chatbot-send" class="chatbot-send"&gt;
+                    &lt;i class="fas fa-paper-plane"&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="step">
+            <h3>2️⃣ Configuración de IA (Opcional)</h3>
+            <p>Para activar las respuestas de IA reales, configura tu clave de OpenAI:</p>
+            
+            <pre><code>&lt;script&gt;
+// Configurar después de cargar el chatbot
+document.addEventListener('DOMContentLoaded', () => {
+    // Reemplaza con tu clave de OpenAI
+    window.nextSiteChatbot.setApiKey('sk-tu-clave-de-openai-aqui');
+});
+&lt;/script&gt;</code></pre>
+
+            <div class="highlight">
+                <strong>Nota:</strong> Sin clave de API, el chatbot usará respuestas predefinidas inteligentes. Funciona perfectamente para la mayoría de casos de uso.
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>3️⃣ Personalización</h3>
+            <p>Puedes personalizar el chatbot modificando la configuración:</p>
+            
+            <pre><code>&lt;script&gt;
+document.addEventListener('DOMContentLoaded', () => {
+    // Personalizar configuración
+    window.nextSiteChatbot.updateConfig({
+        companyName: 'Tu Empresa',
+        companyDescription: 'Tu descripción personalizada',
+        services: ['Servicio 1', 'Servicio 2', 'Servicio 3'],
+        prices: {
+            'básico': '€199',
+            'profesional': '€499',
+            'premium': '€799'
+        }
+    });
+});
+&lt;/script&gt;</code></pre>
+        </div>
+
+        <div class="step">
+            <h3>4️⃣ Características del Chatbot</h3>
+            <ul>
+                <li>✅ <strong>Diseño minimalista</strong> y profesional</li>
+                <li>✅ <strong>Totalmente responsive</strong> para móvil y desktop</li>
+                <li>✅ <strong>Animaciones suaves</strong> y modernas</li>
+                <li>✅ <strong>Historial persistente</strong> en localStorage</li>
+                <li>✅ <strong>Indicador de escritura</strong> realista</li>
+                <li>✅ <strong>Botones de acción rápida</strong> para preguntas comunes</li>
+                <li>✅ <strong>IA integrada</strong> con OpenAI (opcional)</li>
+                <li>✅ <strong>Respuestas inteligentes</strong> predefinidas</li>
+                <li>✅ <strong>Notificaciones</strong> y efectos visuales</li>
+                <li>✅ <strong>Modo oscuro</strong> automático</li>
+                <li>✅ <strong>Accesibilidad</strong> completa</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>5️⃣ Prueba el Chatbot</h3>
+            <p>Abre el archivo <code>chatbot.html</code> en tu navegador para ver una demostración completa del chatbot en acción.</p>
+            
+            <a href="chatbot.html" class="btn" target="_blank">🚀 Ver Demostración</a>
+        </div>
+
+        <div class="step">
+            <h3>6️⃣ Soporte Técnico</h3>
+            <p>El chatbot está completamente documentado y listo para producción. Si necesitas ayuda con la integración o personalización, revisa el código fuente que está completamente comentado.</p>
+            
+            <div class="highlight">
+                <strong>¡Listo para usar!</strong> El chatbot está optimizado para funcionar en cualquier sitio web y se adapta automáticamente al diseño existente.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+{
+  "company": {
+    "name": "NextSite",
+    "description": "Diseño web profesional, desarrollo web a medida y optimización SEO para empresas",
+    "email": "info@nextsite.es",
+    "website": "https://nextsite.es"
+  },
+  "services": [
+    {
+      "icon": "fas fa-paint-brush",
+      "title": "Diseño Web Profesional",
+      "description": "Creamos sitios web modernos y atractivos que reflejan la identidad de tu marca y generan confianza en tus clientes."
+    },
+    {
+      "icon": "fas fa-search",
+      "title": "Optimización SEO",
+      "description": "Tu sitio web aparecerá en los primeros resultados de Google, aumentando tu visibilidad y atrayendo más clientes potenciales."
+    },
+    {
+      "icon": "fas fa-mobile-alt",
+      "title": "Diseño Responsive",
+      "description": "Sitios web que se adaptan perfectamente a cualquier dispositivo: móvil, tablet o escritorio."
+    },
+    {
+      "icon": "fas fa-code",
+      "title": "Desarrollo a Medida",
+      "description": "Cada proyecto es único. Desarrollamos soluciones web personalizadas para las necesidades específicas de tu empresa."
+    },
+    {
+      "icon": "fas fa-chart-line",
+      "title": "Aumento de Ventas",
+      "description": "Nuestros sitios web están diseñados para convertir visitantes en clientes, aumentando tus ventas online significativamente."
+    },
+    {
+      "icon": "fas fa-clock",
+      "title": "Entrega Rápida",
+      "description": "Comprometidos con plazos de entrega eficientes. Tu sitio web estará listo en tiempo récord sin comprometer la calidad."
+    }
+  ],
+  "plans": [
+    {
+      "id": "basico",
+      "name": "Plan Básico",
+      "price": 299,
+      "currency": "€",
+      "period": "/una vez",
+      "description": "Perfecto para pequeñas empresas y startups",
+      "features": [
+        "Diseño web responsive",
+        "Optimización SEO básica",
+        "Formulario de contacto",
+        "Integración redes sociales",
+        "Soporte por email",
+        "Entrega en 7 días",
+        "1 mes de mantenimiento"
+      ],
+      "color": "#0a74da"
+    },
+    {
+      "id": "profesional",
+      "name": "Plan Profesional",
+      "price": 599,
+      "currency": "€",
+      "period": "/una vez",
+      "description": "Ideal para empresas en crecimiento",
+      "featured": true,
+      "features": [
+        "Todo del Plan Básico",
+        "SEO avanzado",
+        "Blog integrado",
+        "Galería de imágenes",
+        "Analytics integrado",
+        "Soporte prioritario",
+        "Entrega en 10 días",
+        "3 meses de mantenimiento"
+      ],
+      "color": "#ff6b35"
+    },
+    {
+      "id": "premium",
+      "name": "Plan Premium",
+      "price": 999,
+      "currency": "€",
+      "period": "/una vez",
+      "description": "Para empresas que buscan máximo rendimiento",
+      "features": [
+        "Todo del Plan Profesional",
+        "Optimización SEO Profesional",
+        "Diseño personalizado",
+        "Optimización velocidad",
+        "Soporte 24/7",
+        "Entrega en 15 días",
+        "6 meses de mantenimiento"
+      ],
+      "color": "#0a74da"
+    }
+  ],
+  "maintenance": {
+    "name": "Plan de Mantenimiento NextSite",
+    "description": "Mantén tu sitio web siempre actualizado y funcionando perfectamente",
+    "price": 100,
+    "currency": "€",
+    "period": "/servicio",
+    "features": [
+      "Mejoras de rendimiento y optimización",
+      "Optimización para todos los dispositivos",
+      "Seguridad avanzada de la página web",
+      "Revisión y corrección de fallos",
+      "Actualizaciones de seguridad",
+      "Copias de seguridad regulares",
+      "Soporte técnico prioritario",
+      "Monitoreo 24/7 del sitio web"
+    ]
+  },
+  "stats": [
+    {
+      "number": "50+",
+      "label": "Proyectos Completados"
+    },
+    {
+      "number": "100%",
+      "label": "Clientes Satisfechos"
+    },
+    {
+      "number": "24/7",
+      "label": "Soporte Técnico"
+    },
+    {
+      "number": "5+",
+      "label": "Años de Experiencia"
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Wheny",
+      "rating": 5,
+      "text": "He quedado muy agusto he contratado el plan premium y en una semana tenia la web acabada, pensaba q me iban a entregar algo mas cutre pero todo lo contrario, muy contento con el resultado. Lo recomiendo",
+      "date": "Hace 1 semana"
+    },
+    {
+      "name": "Fidel Argüelles Rodríguez",
+      "rating": 5,
+      "text": "He quedado muy satisfecho con el servicio todo muy rápido y muy profesional, ya tenía una página que me hicieron con wiz y la verdad q no tiene nada q ver.",
+      "date": "Hace 2 semanas"
+    }
+  ],
+  "rating": {
+    "score": 5.0,
+    "platform": "Google",
+    "total": 5
+  }
+}

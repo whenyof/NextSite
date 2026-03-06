@@ -1,0 +1,191 @@
+<!-- Contract Form Modal -->
+<div id="contractFormModal" class="contract-modal">
+    <div class="modal-overlay"></div>
+    <div class="contract-modal-content">
+        <div class="contract-header">
+            <h2><i class="fas fa-handshake"></i> Contratar <span id="contractPlanName">Plan</span></h2>
+            <button class="modal-close" id="closeContractModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="contract-body">
+            <div class="plan-summary">
+                <div class="plan-info">
+                    <h3 id="contractPlanTitle">Plan Básico</h3>
+                    <p id="contractPlanDescription">Sitio web profesional con diseño moderno y responsive</p>
+                </div>
+                <div class="plan-price">
+                    <span class="price-amount" id="contractPlanPrice">€299</span>
+                    <span class="price-note">IVA incluido</span>
+                </div>
+            </div>
+            
+            <form id="contractForm" class="contract-form">
+                <div class="form-section">
+                    <h3><i class="fas fa-user"></i> Información Personal</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contractName">Nombre Completo *</label>
+                            <input type="text" id="contractName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contractEmail">Email *</label>
+                            <input type="email" id="contractEmail" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contractPhone">Teléfono *</label>
+                            <input type="tel" id="contractPhone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contractCompany">Empresa/Proyecto</label>
+                            <input type="text" id="contractCompany" name="company" placeholder="Nombre de tu empresa o proyecto">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-globe"></i> Información del Sitio Web</h3>
+                    
+                    <div class="form-group">
+                        <label for="contractWebsiteName">Nombre del Sitio Web *</label>
+                        <input type="text" id="contractWebsiteName" name="websiteName" placeholder="Ej: Mi Empresa" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contractWebsiteType">Tipo de Sitio Web *</label>
+                        <select id="contractWebsiteType" name="websiteType" required>
+                            <option value="">Selecciona el tipo</option>
+                            <option value="corporativo">Sitio Corporativo</option>
+                            <option value="portfolio">Portfolio Personal</option>
+                            <option value="blog">Blog</option>
+                            <option value="ecommerce">Tienda Online</option>
+                            <option value="restaurante">Restaurante</option>
+                            <option value="hotel">Hotel/Turismo</option>
+                            <option value="inmobiliaria">Inmobiliaria</option>
+                            <option value="educacion">Educación</option>
+                            <option value="salud">Salud/Medicina</option>
+                            <option value="legal">Legal/Abogados</option>
+                            <option value="consultoria">Consultoría</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contractIndustry">Sector/Industria</label>
+                        <input type="text" id="contractIndustry" name="industry" placeholder="Ej: Tecnología, Salud, Educación, etc.">
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-palette"></i> Diseño y Preferencias</h3>
+                    
+                    <div class="form-group">
+                        <label for="contractColors">Colores Preferidos</label>
+                        <input type="text" id="contractColors" name="colors" placeholder="Ej: Azul y blanco, Rojo y negro, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contractStyle">Estilo Preferido</label>
+                        <select id="contractStyle" name="style">
+                            <option value="">Selecciona un estilo</option>
+                            <option value="moderno">Moderno y Minimalista</option>
+                            <option value="clasico">Clásico y Elegante</option>
+                            <option value="creativo">Creativo y Artístico</option>
+                            <option value="corporativo">Corporativo y Profesional</option>
+                            <option value="divertido">Divertido y Colorido</option>
+                            <option value="tecnologico">Tecnológico y Futurista</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contractInspiration">Sitios Web de Referencia</label>
+                        <input type="text" id="contractInspiration" name="inspiration" placeholder="URLs de sitios que te gustan (separadas por comas)">
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-cogs"></i> Funcionalidades Específicas</h3>
+                    
+                    <div class="form-group">
+                        <label for="contractFeatures">Funcionalidades Deseadas</label>
+                        <textarea id="contractFeatures" name="features" rows="3" placeholder="Ej: Formulario de contacto, Galería de imágenes, Blog, Sistema de citas, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contractPages">Páginas Necesarias</label>
+                        <textarea id="contractPages" name="pages" rows="3" placeholder="Ej: Inicio, Sobre nosotros, Servicios, Contacto, Blog, etc."></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-clock"></i> Tiempo y Presupuesto</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contractTimeline">¿Cuándo necesitas el sitio web?</label>
+                            <select id="contractTimeline" name="timeline">
+                                <option value="">Selecciona una opción</option>
+                                <option value="urgente">Lo antes posible (1-2 semanas)</option>
+                                <option value="normal">Tiempo normal (3-4 semanas)</option>
+                                <option value="flexible">Sin prisa (1-2 meses)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contractBudget">Presupuesto Adicional</label>
+                            <select id="contractBudget" name="budget">
+                                <option value="">Selecciona una opción</option>
+                                <option value="basico">Solo el plan contratado</option>
+                                <option value="pequeno">+€200-500 para extras</option>
+                                <option value="medio">+€500-1000 para extras</option>
+                                <option value="alto">+€1000+ para extras</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-comment"></i> Información Adicional</h3>
+                    
+                    <div class="form-group">
+                        <label for="contractMessage">Mensaje Adicional</label>
+                        <textarea id="contractMessage" name="message" rows="4" placeholder="Cuéntanos cualquier cosa adicional que consideres importante para tu proyecto..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-shield-alt"></i> Términos y Condiciones</h3>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="contractAcceptTerms" name="acceptTerms" required>
+                            <span class="checkmark"></span>
+                            Acepto los <a href="#" target="_blank">términos y condiciones</a> y la <a href="#" target="_blank">política de privacidad</a>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="contractNewsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Quiero recibir información sobre nuevos servicios y ofertas
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="contract-actions">
+                    <button type="button" class="btn-cancel" id="cancelContract">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                    <button type="submit" class="btn-continue" id="continueToPayment">
+                        <i class="fas fa-credit-card"></i> Continuar al Pago
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
